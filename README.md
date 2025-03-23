@@ -18,7 +18,7 @@ This Project is based on **SQL based Hostel Management System**. It handles stud
 
 ---
 
-## 👈 Database Structure
+##  Database Structure
 
 ### 1. `student_s2`
 | Column       | Type        | Description                      |
@@ -175,7 +175,7 @@ This project is developed for academic purposes. Free to use, modify, and enhanc
 
 ---
 
-## 👌 Acknowledgments
+##  Acknowledgments
 Special thanks to my group members for their valuable contributions and teamwork, which greatly assisted in the development of this project.
 Thanks Sneha, Neha, Chetna, Agniva and Dhanesh.
 
