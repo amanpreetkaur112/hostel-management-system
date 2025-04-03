@@ -1,0 +1,1062 @@
+create database project;
+use project;
+
+create table student_s2(
+id int not null primary key auto_increment primary key ,
+std_name varchar(50) not null,
+address varchar(50) not null,
+branch varchar(10) not null,
+batch varchar(10) not null,
+phn_no numeric(50) not null,
+gender varchar(10)not null,
+sem int);
+
+insert into student_s2 values('1','Amanpreet','haldiram','cse','bcs3A','9932446510','female','2');
+insert into student_s2 values('2','Dhanesh','new town','cse','bcs3A','8990011234','male','2');
+insert into student_s2 values('3','Sneha','kolkata','cse','bcs3A','7884359990','female','2');
+insert into student_s2 values('4','sam','devghar','cse','bcs3A','7804359910','male','2');
+insert into student_s2 values('5','Agniva','haldia','cse','bcs3A','8965400123','male','2');
+insert into student_s2 values('6','chetna','haldiram','cse','bcs3A','8965411123','female','2');
+insert into student_s2 values('7','Neha','durgapur','cse','bcs3A','7765400123','female','2');
+insert into student_s2 values('8','Sundram','patna','cse','bcs3A','8944400123','male','2');
+insert into student_s2 values('9','Nitish','ranchi','cse','bcs3A','6965400123','male','2');
+insert into student_s2 values('10','Khushboo','howrah','cse','bcs3A','8911400123','female','2');
+insert into student_s2 values('11','dhruv','MG road','cse','bcs3A','8885400123','male','2');
+insert into student_s2 values('12','ayushman','belgachia','ece','A1','7785400123','male','2');
+insert into student_s2 values('13','ayub','bidhannagar','ece','A1','77844400123','male','2');
+insert into student_s2 values('14','manish','durgapur','ece','A1','7711400121','male','2');
+insert into student_s2 values('15','soumya','sealdah','ece','A1','7744400123','female','2');
+insert into student_s2 values('16','soumi','newtown','ece','A1','7385400123','female','2');
+insert into student_s2 values('17','sherya','belgachia','ece','A1','7715400123','female','2');
+insert into student_s2 values('18','ishika','ranchi','ece','A1','7766400123','female','2');
+insert into student_s2 values('19','sneha','asansol','ece','A1','7815400123','female','2');
+insert into student_s2 values('20','paromita','bardhman','ece','A1','6785400123','female','2');
+insert into student_s2 values('21','anubhav','shilong','ece','A1','7789900123','male','2');
+insert into student_s2 values('22','anubhav','gaya','ee','B2','7711900123','male','2');
+insert into student_s2 values('23','rishab','patna','ee','B2','7011900123','male','2');
+insert into student_s2 values('24','mishti','kolkata','ee','B2','8711900123','female','2');
+insert into student_s2 values('25','rishi','sector 5 Bidhannagar','ee','B2','9711900123','male','2');
+insert into student_s2 values('26','purva','south dumdum','ee','B2','8912300123','female','2');
+insert into student_s2 values('27','misha','hooghly','ee','B2','7711944123','female','2');
+insert into student_s2 values('28','neha','maheshtala','ee','B2','7711990123','female','2');
+insert into student_s2 values('29','dharam','rayour','ee','B2','7788900123','male','2');
+insert into student_s2 values('30','bikash','rayour','ee','B2','9911900123','male','2');
+insert into student_s2 values('31','pari','bidhannagar sector 2','ee','B2','6610900123','female','2');
+insert into student_s2 values('32','archie','gaya','bca','bb1','9823456278','female','2');
+insert into student_s2 values('33','soumi','barrackpore','bca','bb1','9811456278','female','2');
+insert into student_s2 values('34','shubham','bankura','bca','bb1','9811456278','male','2');
+insert into student_s2 values('35','kisan','mayapur','bca','bb1','8823456278','male','2');
+insert into student_s2 values('36','kanhaiya','krishnanagar','bca','bb1','9850456278','male','2');
+insert into student_s2 values('37','dhruv','kolkata','bca','bb1','9823116278','male','2');
+insert into student_s2 values('38','khushi','dhanbad','bca','bb1','9003456278','female','2');
+insert into student_s2 values('39','aaryan','jharkhand','bca','bb1','8003456278','male','2');
+insert into student_s2 values('40','bir','durgapur','bca','bb1','9823456000','male','2');
+insert into student_s2 values('41','baibhav','patna','bca','bb1','9003456278','male','2');
+insert into student_s2 values('42','somen','chingrighata','me','c3','9013456278','male','2');
+insert into student_s2 values('43','shubo','shyambazar','me','c3','9014456278','male','2');
+insert into student_s2 values('44','dev','gariahat','me','c3','9022456278','male','2');
+insert into student_s2 values('45','ajay','bihar','me','c3','9015556278','male','2');
+insert into student_s2 values('46','vishal','patna','me','c3','9013956278','male','2');
+insert into student_s2 values('47','ronit','chingrighata','me','c3','9113456278','male','2');
+insert into student_s2 values('48','ayushi','bhadrak','me','c3','9913456278','female','2');
+insert into student_s2 values('49','vikram','bardhman','me','c3','8013456278','male','2');
+insert into student_s2 values('50','shikha','benachity ','me','c3','8913456278','female','2');
+
+select * from student_s2;
+
+
+
+
+
+use project;
+
+create table girlsh(
+serial_no int not null primary key auto_increment primary key ,
+std_id int,
+name varchar(50),
+building_no int,
+room_no int,
+hostel_fee double,
+room_type varchar(30),
+foreign key(std_id)references student_s2(id));
+
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(('1',(select id from student_s2 where id='1'),(select std_name from student_s2 where id='1' ),1,101,'5000','double sharing'));
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(2,(select id from student_s2 where id='3'),(select std_name from student_s2 where id='3'),1,101,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(3,(select id from student_s2 where id='6'),(select std_name from student_s2 where id='6'),1,102,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(4,(select id from student_s2 where id='7'),(select std_name from student_s2 where id='7'),1,102,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(5,(select id from student_s2 where id='10'),(select std_name from student_s2 where id='10'),1,104,'4000','triple sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(6,(select id from student_s2 where id='15'),(select std_name from student_s2 where id='15'),1,103,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(7,(select id from student_s2 where id='16'),(select std_name from student_s2 where id='16'),1,104,'4000','triple sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(8,(select id from student_s2 where id='17'),(select std_name from student_s2 where id='17'),1,100,'6000','single room');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(10,(select id from student_s2 where id='19'),(select std_name from student_s2 where id='19'),1,104,'4000','triple sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(11,(select id from student_s2 where id='20'),(select std_name from student_s2 where id='20'),2,200,'6000','single sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(12,(select id from student_s2 where id='24'),(select std_name from student_s2 where id='24'),2,201,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(13,(select id from student_s2 where id='26'),(select std_name from student_s2 where id='26'),2,201,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(14,(select id from student_s2 where id='27'),(select std_name from student_s2 where id='27'),2,202,'4000','triple sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(15,(select id from student_s2 where id='28'),(select std_name from student_s2 where id='28'),2,202,'4000','triple sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(16,(select id from student_s2 where id='31'),(select std_name from student_s2 where id='31'),2,203,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(17,(select id from student_s2 where id='32'),(select std_name from student_s2 where id='32'),2,202,'4000','triple sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(18,(select id from student_s2 where id='33'),(select std_name from student_s2 where id='33'),2,203,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(19,(select id from student_s2 where id='38'),(select std_name from student_s2 where id='38'),3,300,'6000','single room');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(20,(select id from student_s2 where id='48'),(select std_name from student_s2 where id='48'),3,301,'5000','double sharing');
+insert into girlsh(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(21,(select id from student_s2 where id='50'),(select std_name from student_s2 where id='50'),3,301,'5000','double sharing');
+
+select * from girlsh;
+
+
+
+
+
+use project;
+
+create table boys_h1(
+serial_no int not null primary key auto_increment primary key ,
+std_id int,
+name varchar(50),
+building_no int,
+room_no int,
+hostel_fee double,
+room_type varchar(30),
+foreign key(std_id)references student_s2(id));
+
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values('1',(select id from student_s2 where id='2'),(select std_name from student_s2 where id='2' ),5,501,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(2,(select id from student_s2 where id='4'),(select std_name from student_s2 where id='4'),5,501,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(3,(select id from student_s2 where id='5'),(select std_name from student_s2 where id='5'),5,501,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(4,(select id from student_s2 where id='8'),(select std_name from student_s2 where id='8'),5,501,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(5,(select id from student_s2 where id='9'),(select std_name from student_s2 where id='9'),5,504,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(6,(select id from student_s2 where id='11'),(select std_name from student_s2 where id='11'),5,503,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(7,(select id from student_s2 where id='12'),(select std_name from student_s2 where id='12'),5,504,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(8,(select id from student_s2 where id='13'),(select std_name from student_s2 where id='13'),5,500,'6000','single room');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(9,(select id from student_s2 where id='14'),(select std_name from student_s2 where id='14'),5,503,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(10,(select id from student_s2 where id='21'),(select std_name from student_s2 where id='21'),5,504,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(11,(select id from student_s2 where id='22'),(select std_name from student_s2 where id='22'),6,600,'6000','single sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(12,(select id from student_s2 where id='23'),(select std_name from student_s2 where id='23'),6,601,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(13,(select id from student_s2 where id='25'),(select std_name from student_s2 where id='25'),6,601,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(14,(select id from student_s2 where id='29'),(select std_name from student_s2 where id='29'),6,602,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(15,(select id from student_s2 where id='30'),(select std_name from student_s2 where id='30'),6,602,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(16,(select id from student_s2 where id='34'),(select std_name from student_s2 where id='34'),6,603,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(17,(select id from student_s2 where id='35'),(select std_name from student_s2 where id='35'),6,602,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(18,(select id from student_s2 where id='36'),(select std_name from student_s2 where id='36'),6,603,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(19,(select id from student_s2 where id='37'),(select std_name from student_s2 where id='37'),7,700,'6000','single room');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(20,(select id from student_s2 where id='39'),(select std_name from student_s2 where id='39'),7,701,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(21,(select id from student_s2 where id='40'),(select std_name from student_s2 where id='40'),7,701,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(22,(select id from student_s2 where id='41'),(select std_name from student_s2 where id='41'),7,702,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(23,(select id from student_s2 where id='42'),(select std_name from student_s2 where id='42'),7,703,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(24,(select id from student_s2 where id='43'),(select std_name from student_s2 where id='43'),7,702,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(25,(select id from student_s2 where id='44'),(select std_name from student_s2 where id='44'),7,703,'5000','double sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(26,(select id from student_s2 where id='45'),(select std_name from student_s2 where id='45'),7,702,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(27,(select id from student_s2 where id='46'),(select std_name from student_s2 where id='46'),7,704,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(28,(select id from student_s2 where id='47'),(select std_name from student_s2 where id='47'),7,704,'4000','triple sharing');
+insert into boys_h1(serial_no,std_id,name,building_no,room_no,hostel_fee,room_type)values(29,(select id from student_s2 where id='49'),(select std_name from student_s2 where id='49'),7,705,'6000','single room');
+
+select * from boys_h1;
+
+
+
+
+
+use project;
+
+create table employee(
+employeeid int not null primary key,
+employee_name varchar(50)not null,
+phone numeric(10,0) not null,
+salary double not null,
+DOJ date not null,
+absent int not null,
+received_sal double not null);
+
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('1','Rani','9976534510','6000','2022-02-01',5,((employee.salary)-((employee.salary/30)*5)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('2','shampa','8976534510','6000','2021-03-01',8,((employee.salary)-((employee.salary/30)*8)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('3','vaishali','8966534510','6000','2022-01-01',4,((employee.salary)-((employee.salary/30)*4)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('4','shyam','7976534510','6000','2020-11-01',5,((employee.salary)-((employee.salary/30)*5)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('5','raju','8606534510','6000','2020-12-02',2,((employee.salary)-((employee.salary/30)*2)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('6','sintu','7970034510','6000','2021-01-07',0,((employee.salary)-((employee.salary/30)*0)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('7','sima','7006534510','4000','2020-02-11',2,((employee.salary)-((employee.salary/30)*8)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('8','ramesh','7976534510','4000','2021-02-01',1,((employee.salary)-((employee.salary/30)*8)));
+ insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('9','sushil','8970534510','7000','2020-01-01',11,((employee.salary)-((employee.salary/30)*11)));
+insert into employee(employeeid,employee_name,phone,salary,DOJ,absent,received_sal)values('10','debu','6916534510','7000','2020-02-11',8,((employee.salary)-((employee.salary/30)*8)));
+
+select * from employee;
+
+
+
+
+
+use project;
+
+create table purchase(
+serial_no int not null primary key auto_increment primary key,
+day_no int not null,
+rice  double not null,
+wheat  double not null,
+vegetable double not null,
+oil double not null,
+salt double not null,
+sugar double not null,
+spices double not null,
+non_veg double not null,
+other double not null,
+sum double);
+
+insert into purchase(serial_no,day_no,rice,wheat ,vegetable,oil,salt,sugar,spices,non_veg,other,sum)
+values('1','1','350','350','200','50','50','60','100','1000','700',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('2','2','340','340','210','40','40','50','100','800','554',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('3','3','360','400','190','50','40','44','100','900','321',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('4','4','350','360','400','40','50','54','90','0','876',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('5','5','350','350','200','50','50','33','100','900','454',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('6','6','350','350','250','30','30','65','100','700','176',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('7','7','400','400','300','60','50','55','150','1000','433',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('8','8','350','350','200','50','50','43','100','1000','909',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('9','9','300','250','180','30','0','20','100','600','1356',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('10','10','350','350','200','40','50','54','100','750','80',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('11','11','350','350','200','50','50','44','100','0','600',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('12','12','350','350','200','50','50','65','100','800','365',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('13','13','350','350','200','50','50','10','100','700','987',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('14','14','350','300','200','55','35','54','85','1100','121',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('15','15','350','350','200','50','50','50','100','800','344',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('16','16','350','350','180','42','33','0','50','0','200',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('17','17','350','350','200','50','50','43','100','800','54',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('18','18','350','350','200','50','50','54','100','650','66',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('19','19','330','370','189','30','56','23','65','850','199',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('20','20','350','350','200','50','50','98','100','600','1400',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('21','21','350','450','260','50','50','45','84','976','564',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('22','22','350','350','200','50','50','39','100','800','65',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('23','23','350','350','180','42','33','77','50','1200','73.2',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('24','24','350','350','200','50','50','40','100','800','402',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('25','25','350','350','200','50','50','65','100','550','654',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('26','26','330','370','189','30','56','44','65','850','552',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('27','27','350','350','200','50','50','50','100','600','333',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('28','28','440','430','260','70','54',40,'150','1406','98',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('29','29','440','430','260','70','54',40,'150','700','98',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other),
+('30','30','400','330','240','30','44',50,'190','906','198',purchase.rice+purchase.wheat+purchase.vegetable+purchase.oil+purchase.salt+purchase.sugar+purchase.spices+purchase.non_veg+purchase.other);
+ 
+ select * from purchase;
+
+
+
+
+
+use project;
+
+create table expense_s(
+serial_no int not null auto_increment primary key,
+purchase_product double not null,
+renovation double not null,
+emp_salaries double not null,
+sum_of_expenses double not null,
+Date date);
+
+insert into expense_s(serial_no,purchase_product,renovation,emp_salaries,sum_of_expenses,date)
+values('1',(select SUM(sum)from purchase),'5000',(select SUM(received_sal)from employee),
+expense_s.purchase_product+expense_s.renovation+expense_s.emp_salaries,'2023-12-08');
+
+select * from expense_s;
+
+
+
+
+
+use project;
+
+create table salaries(
+serial_no int  not null primary key auto_increment primary key,
+emp_id int not null,
+emp_name varchar(50) not null,
+emp_sal double not null,
+per_day_sal double not null,
+foreign key(emp_id)references employee(employeeid));
+
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('1',(select employeeid from employee where employeeid='1' ),(select employee_name from employee where employeeid='1'),(select salary from employee where employeeid='1'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('2',(select employeeid from employee where employeeid='2' ),(select employee_name from employee where employeeid='2'),(select salary from employee where employeeid='2'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('3',(select employeeid from employee where employeeid='3' ),(select employee_name from employee where employeeid='3'),(select salary from employee where employeeid='3'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('4',(select employeeid from employee where employeeid='4' ),(select employee_name from employee where employeeid='4'),(select salary from employee where employeeid='4'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('5',(select employeeid from employee where employeeid='5' ),(select employee_name from employee where employeeid='5'),(select salary from employee where employeeid='5'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('6',(select employeeid from employee where employeeid='6' ),(select employee_name from employee where employeeid='6'),(select salary from employee where employeeid='6'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('7',(select employeeid from employee where employeeid='7' ),(select employee_name from employee where employeeid='7'),(select salary from employee where employeeid='7'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('8',(select employeeid from employee where employeeid='8' ),(select employee_name from employee where employeeid='8'),(select salary from employee where employeeid='8'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('9',(select employeeid from employee where employeeid='9' ),(select employee_name from employee where employeeid='9'),(select salary from employee where employeeid='9'),(emp_sal/30));
+insert into salaries(serial_no,emp_id,emp_name,emp_sal,per_day_sal)values('10',(select employeeid from employee where employeeid='10' ),(select employee_name from employee where employeeid='10'),(select salary from employee where employeeid='10'),(emp_sal/30));
+
+select * from salaries;
+
+
+
+
+
+use project;
+
+create table girls_h_fee (
+serial_no int not null,
+stdid int not null,
+std_name varchar(50) not null,
+room_no int not null,
+hostel_fee double not null,
+perDay_roomCharge double not null,
+foreign key(stdid)references girlsh(std_id));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(1,(select std_id from girlsh where std_id='1'),(select name from girlsh where std_id='1'),
+(select room_no from girlsh where std_id='1'),(select hostel_fee from girlsh where std_id='1'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(2,(select std_id from girlsh where std_id='3'),(select name from girlsh where std_id='3'),
+(select room_no from girlsh where std_id='3'),(select hostel_fee from girlsh where std_id='3'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(3,(select std_id from girlsh where std_id='6'),(select name from girlsh where std_id='6'),
+(select room_no from girlsh where std_id='6'),(select hostel_fee from girlsh where std_id='6'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(4,(select std_id from girlsh where std_id='7'),(select name from girlsh where std_id='7'),
+(select room_no from girlsh where std_id='7'),(select hostel_fee from girlsh where std_id='7'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(5,(select std_id from girlsh where std_id='10'),(select name from girlsh where std_id='10'),
+(select room_no from girlsh where std_id='10'),(select hostel_fee from girlsh where std_id='10'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(6,(select std_id from girlsh where std_id='15'),(select name from girlsh where std_id='15'),
+(select room_no from girlsh where std_id='15'),(select hostel_fee from girlsh where std_id='15'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(7,(select std_id from girlsh where std_id='16'),(select name from girlsh where std_id='16'),
+(select room_no from girlsh where std_id='16'),(select hostel_fee from girlsh where std_id='16'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(8,(select std_id from girlsh where std_id='17'),(select name from girlsh where std_id='17'),
+(select room_no from girlsh where std_id='17'),(select hostel_fee from girlsh where std_id='17'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(9,(select std_id from girlsh where std_id='18'),(select name from girlsh where std_id='18'),
+(select room_no from girlsh where std_id='18'),(select hostel_fee from girlsh where std_id='18'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(10,(select std_id from girlsh where std_id='19'),(select name from girlsh where std_id='19'),
+(select room_no from girlsh where std_id='19'),(select hostel_fee from girlsh where std_id='19'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(11,(select std_id from girlsh where std_id='20'),(select name from girlsh where std_id='20'),
+(select room_no from girlsh where std_id='20'),(select hostel_fee from girlsh where std_id='20'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(12,(select std_id from girlsh where std_id='24'),(select name from girlsh where std_id='24'),
+(select room_no from girlsh where std_id='24'),(select hostel_fee from girlsh where std_id='24'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(13,(select std_id from girlsh where std_id='26'),(select name from girlsh where std_id='26'),
+(select room_no from girlsh where std_id='26'),(select hostel_fee from girlsh where std_id='26'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(14,(select std_id from girlsh where std_id='27'),(select name from girlsh where std_id='28'),
+(select room_no from girlsh where std_id='27'),(select hostel_fee from girlsh where std_id='28'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(15,(select std_id from girlsh where std_id='28'),(select name from girlsh where std_id='28'),
+(select room_no from girlsh where std_id='28'),(select hostel_fee from girlsh where std_id='28'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(16,(select std_id from girlsh where std_id='31'),(select name from girlsh where std_id='31'),
+(select room_no from girlsh where std_id='31'),(select hostel_fee from girlsh where std_id='31'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(17,(select std_id from girlsh where std_id='32'),(select name from girlsh where std_id='32'),
+(select room_no from girlsh where std_id='32'),(select hostel_fee from girlsh where std_id='32'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(18,(select std_id from girlsh where std_id='33'),(select name from girlsh where std_id='33'),
+(select room_no from girlsh where std_id='33'),(select hostel_fee from girlsh where std_id='33'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(19,(select std_id from girlsh where std_id='38'),(select name from girlsh where std_id='38'),
+(select room_no from girlsh where std_id='38'),(select hostel_fee from girlsh where std_id='38'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(20,(select std_id from girlsh where std_id='48'),(select name from girlsh where std_id='48'),
+(select room_no from girlsh where std_id='48'),(select hostel_fee from girlsh where std_id='48'),(hostel_fee/30));
+
+insert into girls_h_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(21,(select std_id from girlsh where std_id='50'),(select name from girlsh where std_id='50'),
+(select room_no from girlsh where std_id='50'),(select hostel_fee from girlsh where std_id='50'),(hostel_fee/30));
+
+select * from girls_h_fee;
+
+
+
+
+
+use project;
+
+create table boys_h1_fee(
+serial_no int not null,
+stdid int not null,
+std_name varchar(50) not null,
+room_no int not null,
+hostel_fee double not null,
+perDay_roomCharge double not null,
+foreign key(stdid)references boys_h1(std_id));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(1,(select std_id from boys_h1 where std_id='2'),(select name from boys_h1 where std_id='2'),
+(select room_no from boys_h1 where std_id='2'),(select hostel_fee from boys_h1 where std_id='2'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(2,(select std_id from boys_h1 where std_id='4'),(select name from boys_h1 where std_id='4'),
+(select room_no from boys_h1 where std_id='4'),(select hostel_fee from boys_h1 where std_id='4'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(3,(select std_id from boys_h1 where std_id='5'),(select name from boys_h1 where std_id='5'),
+(select room_no from boys_h1 where std_id='5'),(select hostel_fee from boys_h1 where std_id='5'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(4,(select std_id from boys_h1 where std_id='8'),(select name from boys_h1 where std_id='8'),
+(select room_no from boys_h1 where std_id='8'),(select hostel_fee from boys_h1 where std_id='8'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(5,(select std_id from boys_h1 where std_id='9'),(select name from boys_h1 where std_id='9'),
+(select room_no from boys_h1 where std_id='9'),(select hostel_fee from boys_h1 where std_id='9'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(6,(select std_id from boys_h1 where std_id='11'),(select name from boys_h1 where std_id='11'),
+(select room_no from boys_h1 where std_id='11'),(select hostel_fee from boys_h1 where std_id='11'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(7,(select std_id from boys_h1 where std_id='12'),(select name from boys_h1 where std_id='12'),
+(select room_no from boys_h1 where std_id='12'),(select hostel_fee from boys_h1 where std_id='12'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(8,(select std_id from boys_h1 where std_id='13'),(select name from boys_h1 where std_id='13'),
+(select room_no from boys_h1 where std_id='13'),(select hostel_fee from boys_h1 where std_id='13'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(9,(select std_id from boys_h1 where std_id='14'),(select name from boys_h1 where std_id='14'),
+(select room_no from boys_h1 where std_id='14'),(select hostel_fee from boys_h1 where std_id='14'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(10,(select std_id from boys_h1 where std_id='21'),(select name from boys_h1 where std_id='21'),
+(select room_no from boys_h1 where std_id='21'),(select hostel_fee from boys_h1 where std_id='21'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(11,(select std_id from boys_h1 where std_id='22'),(select name from boys_h1 where std_id='22'),
+(select room_no from boys_h1 where std_id='22'),(select hostel_fee from boys_h1 where std_id='22'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(12,(select std_id from boys_h1 where std_id='23'),(select name from boys_h1 where std_id='23'),
+(select room_no from boys_h1 where std_id='23'),(select hostel_fee from boys_h1 where std_id='23'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(13,(select std_id from boys_h1 where std_id='25'),(select name from boys_h1 where std_id='25'),
+(select room_no from boys_h1 where std_id='25'),(select hostel_fee from boys_h1 where std_id='25'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(14,(select std_id from boys_h1 where std_id='29'),(select name from boys_h1 where std_id='29'),
+(select room_no from boys_h1 where std_id='29'),(select hostel_fee from boys_h1 where std_id='29'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(15,(select std_id from boys_h1 where std_id='30'),(select name from boys_h1 where std_id='30'),
+(select room_no from boys_h1 where std_id='30'),(select hostel_fee from boys_h1 where std_id='30'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(16,(select std_id from boys_h1 where std_id='34'),(select name from boys_h1 where std_id='34'),
+(select room_no from boys_h1 where std_id='34'),(select hostel_fee from boys_h1 where std_id='34'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(17,(select std_id from boys_h1 where std_id='35'),(select name from boys_h1 where std_id='35'),
+(select room_no from boys_h1 where std_id='35'),(select hostel_fee from boys_h1 where std_id='35'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(18,(select std_id from boys_h1 where std_id='36'),(select name from boys_h1 where std_id='36'),
+(select room_no from boys_h1 where std_id='36'),(select hostel_fee from boys_h1 where std_id='36'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(19,(select std_id from boys_h1 where std_id='37'),(select name from boys_h1 where std_id='37'),
+(select room_no from boys_h1 where std_id='37'),(select hostel_fee from boys_h1 where std_id='37'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(20,(select std_id from boys_h1 where std_id='39'),(select name from boys_h1 where std_id='39'),
+(select room_no from boys_h1 where std_id='39'),(select hostel_fee from boys_h1 where std_id='39'),(hostel_fee/30));
+
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(21,(select std_id from boys_h1 where std_id='40'),(select name from boys_h1 where std_id='40'),
+(select room_no from boys_h1 where std_id='40'),(select hostel_fee from boys_h1 where std_id='40'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(22,(select std_id from boys_h1 where std_id='41'),(select name from boys_h1 where std_id='41'),
+(select room_no from boys_h1 where std_id='41'),(select hostel_fee from boys_h1 where std_id='41'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(23,(select std_id from boys_h1 where std_id='42'),(select name from boys_h1 where std_id='42'),
+(select room_no from boys_h1 where std_id='42'),(select hostel_fee from boys_h1 where std_id='42'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(24,(select std_id from boys_h1 where std_id='43'),(select name from boys_h1 where std_id='43'),
+(select room_no from boys_h1 where std_id='43'),(select hostel_fee from boys_h1 where std_id='43'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(25,(select std_id from boys_h1 where std_id='44'),(select name from boys_h1 where std_id='44'),
+(select room_no from boys_h1 where std_id='44'),(select hostel_fee from boys_h1 where std_id='44'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(26,(select std_id from boys_h1 where std_id='45'),(select name from boys_h1 where std_id='45'),
+(select room_no from boys_h1 where std_id='45'),(select hostel_fee from boys_h1 where std_id='45'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(27,(select std_id from boys_h1 where std_id='46'),(select name from boys_h1 where std_id='46'),
+(select room_no from boys_h1 where std_id='46'),(select hostel_fee from boys_h1 where std_id='46'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(28,(select std_id from boys_h1 where std_id='47'),(select name from boys_h1 where std_id='47'),
+(select room_no from boys_h1 where std_id='47'),(select hostel_fee from boys_h1 where std_id='47'),(hostel_fee/30));
+
+insert into boys_h1_fee(serial_no,stdid,std_name,room_no,hostel_fee,perDay_roomCharge)values
+(29,(select std_id from boys_h1 where std_id='49'),(select name from boys_h1 where std_id='49'),
+(select room_no from boys_h1 where std_id='49'),(select hostel_fee from boys_h1 where std_id='49'),(hostel_fee/30));
+
+select * from boys_h1_fee;
+
+
+
+
+
+use project;
+
+create table profit(
+day int not null,
+purchase double not null,
+salary double not null,
+girls_h_charge double not null,
+boys_h_charge double not null,
+per_day_profit double not null
+);
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(1,(select sum from purchase where day_no='1'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='1')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(2,(select sum from purchase where day_no='2'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='2')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(3,(select sum from purchase where day_no='3'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='3')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(4,(select sum from purchase where day_no='4'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='4')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(5,(select sum from purchase where day_no='5'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='5')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(6,(select sum from purchase where day_no='6'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='6')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(7,(select sum from purchase where day_no='7'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='7')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(8,(select sum from purchase where day_no='8'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='8')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(9,(select sum from purchase where day_no='9'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='9')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(10,(select sum from purchase where day_no='10'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='10')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(11,(select sum from purchase where day_no='11'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='11')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(12,(select sum from purchase where day_no='12'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='12')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(13,(select sum from purchase where day_no='13'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='13')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(14,(select sum from purchase where day_no='14'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='14')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(15,(select sum from purchase where day_no='15'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='15')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(16,(select sum from purchase where day_no='16'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='16')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(17,(select sum from purchase where day_no='17'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='17')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(18,(select sum from purchase where day_no='18'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='18')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(19,(select sum from purchase where day_no='19'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='19')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(20,(select sum from purchase where day_no='20'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='20')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(21,(select sum from purchase where day_no='21'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='21')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(22,(select sum from purchase where day_no='22'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='22')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(23,(select sum from purchase where day_no='23'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='23')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(24,(select sum from purchase where day_no='24'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='24')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(25,(select sum from purchase where day_no='25'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='25')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(26,(select sum from purchase where day_no='26'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='26')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(27,(select sum from purchase where day_no='27'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='27')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(28,(select sum from purchase where day_no='28'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='28')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(29,(select sum from purchase where day_no='29'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='29')+(select SUM(per_day_sal)from salaries))));
+
+insert into profit(day,purchase,salary,girls_h_charge,boys_h_charge,per_day_profit)values
+(30,(select sum from purchase where day_no='30'),(select SUM(per_day_sal)from salaries),
+(select SUM(perDay_roomCharge)from girls_h_fee),(select SUM(perDay_roomCharge)from boys_h1_fee),
+(((select SUM(perDay_roomCharge)from girls_h_fee)+(select SUM(perDay_roomCharge)from boys_h1_fee))
+-((select sum from purchase where day_no='30')+(select SUM(per_day_sal)from salaries))));
+
+select * from profit;
+
+
+
+
+
+use project;
+
+create table mainp_(
+serial_no int not null primary key auto_increment primary key,
+std_id int not null,
+name varchar(50),
+branch varchar(10),
+room_no int not null,
+hostel_fee double not null,
+emp_id int ,
+emp_name varchar(20),
+emp_salary double ,
+day_no int ,
+purchase double,
+sum_of_expenses double,
+sum_of_hostelfee double,
+per_day_profit double,
+foreign key(std_id)references student_s2(id),
+foreign key(emp_id)references salaries(emp_id));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+sum_of_expenses,sum_of_hostelfee,per_day_profit)values(1,(select id from student_s2 where id='1'),
+(select std_name from student_s2 where id='1'),(select branch from student_s2 where id='1'),
+(select room_no from girlsh where std_id='1'),(select hostel_fee from girlsh where std_id='1'),
+(select employeeid from employee where employeeid='1'),(select employee_name from employee where employeeid='1'),
+(select salary from employee where employeeid='1'),(select day_no from purchase where serial_no='1'),
+(select sum from purchase where serial_no='1'),(select sum_of_expenses from expense_s where serial_no='1'),
+((select SUM(hostel_fee) from girlsh)+(select SUM(hostel_fee) from boys_h1)),
+(select per_day_profit from profit where day='1'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(2,(select id from student_s2 where id='2'),
+(select std_name from student_s2 where id='2'),(select branch from student_s2 where id='2'),
+(select room_no from boys_h1 where std_id='2'),(select hostel_fee from boys_h1 where std_id='2'),
+(select employeeid from employee where employeeid='2'),(select employee_name from employee where employeeid='2'),
+(select salary from employee where employeeid='2'),(select day_no from purchase where serial_no='2'),
+(select sum from purchase where serial_no='2'),(select per_day_profit from profit where day='2'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(3,(select id from student_s2 where id='3'),
+(select std_name from student_s2 where id='3'),(select branch from student_s2 where id='3'),
+(select room_no from girlsh where std_id='3'),(select hostel_fee from girlsh where std_id='3'),
+(select employeeid from employee where employeeid='3'),(select employee_name from employee where employeeid='3'),
+(select salary from employee where employeeid='3'),(select day_no from purchase where serial_no='3'),
+(select sum from purchase where serial_no='3'),(select per_day_profit from profit where day='3'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(4,(select id from student_s2 where id='4'),
+(select std_name from student_s2 where id='4'),(select branch from student_s2 where id='4'),
+(select room_no from boys_h1 where std_id='4'),(select hostel_fee from boys_h1 where std_id='4'),
+(select employeeid from employee where employeeid='4'),(select employee_name from employee where employeeid='4'),
+(select salary from employee where employeeid='4'),(select day_no from purchase where serial_no='4'),
+(select sum from purchase where serial_no='4'),(select per_day_profit from profit where day='4'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(5,(select id from student_s2 where id='5'),
+(select std_name from student_s2 where id='5'),(select branch from student_s2 where id='5'),
+(select room_no from boys_h1 where std_id='5'),(select hostel_fee from boys_h1 where std_id='5'),
+(select employeeid from employee where employeeid='5'),(select employee_name from employee where employeeid='5'),
+(select salary from employee where employeeid='5'),(select day_no from purchase where serial_no='5'),
+(select sum from purchase where serial_no='5'),(select per_day_profit from profit where day='5'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(6,(select id from student_s2 where id='6'),
+(select std_name from student_s2 where id='6'),(select branch from student_s2 where id='6'),
+(select room_no from girlsh where std_id='6'),(select hostel_fee from girlsh where std_id='6'),
+(select employeeid from employee where employeeid='6'),(select employee_name from employee where employeeid='6'),
+(select salary from employee where employeeid='6'),(select day_no from purchase where serial_no='6'),
+(select sum from purchase where serial_no='6'),(select per_day_profit from profit where day='6'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(7,(select id from student_s2 where id='7'),
+(select std_name from student_s2 where id='7'),(select branch from student_s2 where id='7'),
+(select room_no from girlsh where std_id='7'),(select hostel_fee from girlsh where std_id='7'),
+(select employeeid from employee where employeeid='7'),(select employee_name from employee where employeeid='7'),
+(select salary from employee where employeeid='7'),(select day_no from purchase where serial_no='7'),
+(select sum from purchase where serial_no='7'),(select per_day_profit from profit where day='7'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(8,(select id from student_s2 where id='8'),
+(select std_name from student_s2 where id='8'),(select branch from student_s2 where id='8'),
+(select room_no from boys_h1 where std_id='8'),(select hostel_fee from boys_h1 where std_id='8'),
+(select employeeid from employee where employeeid='8'),(select employee_name from employee where employeeid='8'),
+(select salary from employee where employeeid='8'),(select day_no from purchase where serial_no='8'),
+(select sum from purchase where serial_no='8'),(select per_day_profit from profit where day='8'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(9,(select id from student_s2 where id='9'),
+(select std_name from student_s2 where id='9'),(select branch from student_s2 where id='9'),
+(select room_no from boys_h1 where std_id='9'),(select hostel_fee from boys_h1 where std_id='5'),
+(select employeeid from employee where employeeid='9'),(select employee_name from employee where employeeid='9'),
+(select salary from employee where employeeid='9'),(select day_no from purchase where serial_no='9'),
+(select sum from purchase where serial_no='9'),(select per_day_profit from profit where day='9'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,emp_id,emp_name,emp_salary,day_no,purchase,
+per_day_profit)values(10,(select id from student_s2 where id='10'),
+(select std_name from student_s2 where id='10'),(select branch from student_s2 where id='10'),
+(select room_no from girlsh where std_id='10'),(select hostel_fee from girlsh where std_id='10'),
+(select employeeid from employee where employeeid='10'),(select employee_name from employee where employeeid='10'),
+(select salary from employee where employeeid='10'),(select day_no from purchase where serial_no='10'),
+(select sum from purchase where serial_no='10'),(select per_day_profit from profit where day='10'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(11,(select id from student_s2 where id='11'),
+(select std_name from student_s2 where id='11'),(select branch from student_s2 where id='11'),
+(select room_no from boys_h1 where std_id='11'),(select hostel_fee from boys_h1 where std_id='11'),
+(select day_no from purchase where serial_no='11'),
+(select sum from purchase where serial_no='11'),(select per_day_profit from profit where day='11'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(12,(select id from student_s2 where id='12'),
+(select std_name from student_s2 where id='12'),(select branch from student_s2 where id='12'),
+(select room_no from boys_h1 where std_id='12'),(select hostel_fee from boys_h1 where std_id='12'),
+(select day_no from purchase where serial_no='12'),
+(select sum from purchase where serial_no='12'),(select per_day_profit from profit where day='12'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(13,(select id from student_s2 where id='13'),
+(select std_name from student_s2 where id='13'),(select branch from student_s2 where id='13'),
+(select room_no from boys_h1 where std_id='13'),(select hostel_fee from boys_h1 where std_id='13'),
+(select day_no from purchase where serial_no='13'),
+(select sum from purchase where serial_no='13'),(select per_day_profit from profit where day='13'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(14,(select id from student_s2 where id='14'),
+(select std_name from student_s2 where id='14'),(select branch from student_s2 where id='14'),
+(select room_no from boys_h1 where std_id='14'),(select hostel_fee from boys_h1 where std_id='14'),
+(select day_no from purchase where serial_no='14'),
+(select sum from purchase where serial_no='14'),(select per_day_profit from profit where day='14'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(15,(select id from student_s2 where id='15'),
+(select std_name from student_s2 where id='15'),(select branch from student_s2 where id='15'),
+(select room_no from girlsh where std_id='15'),(select hostel_fee from girlsh where std_id='15'),
+(select day_no from purchase where serial_no='15'),
+(select sum from purchase where serial_no='15'),(select per_day_profit from profit where day='15'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(16,(select id from student_s2 where id='16'),
+(select std_name from student_s2 where id='16'),(select branch from student_s2 where id='16'),
+(select room_no from girlsh where std_id='16'),(select hostel_fee from girlsh where std_id='16'),
+(select day_no from purchase where serial_no='16'),
+(select sum from purchase where serial_no='16'),(select per_day_profit from profit where day='16'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(17,(select id from student_s2 where id='17'),
+(select std_name from student_s2 where id='17'),(select branch from student_s2 where id='17'),
+(select room_no from girlsh where std_id='17'),(select hostel_fee from girlsh where std_id='17'),
+(select day_no from purchase where serial_no='17'),
+(select sum from purchase where serial_no='17'),(select per_day_profit from profit where day='17'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(18,(select id from student_s2 where id='18'),
+(select std_name from student_s2 where id='18'),(select branch from student_s2 where id='18'),
+(select room_no from girlsh where std_id='18'),(select hostel_fee from girlsh where std_id='18'),
+(select day_no from purchase where serial_no='18'),
+(select sum from purchase where serial_no='18'),(select per_day_profit from profit where day='18'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(19,(select id from student_s2 where id='19'),
+(select std_name from student_s2 where id='19'),(select branch from student_s2 where id='19'),
+(select room_no from girlsh where std_id='19'),(select hostel_fee from girlsh where std_id='19'),
+(select day_no from purchase where serial_no='19'),
+(select sum from purchase where serial_no='19'),(select per_day_profit from profit where day='19'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(20,(select id from student_s2 where id='20'),
+(select std_name from student_s2 where id='20'),(select branch from student_s2 where id='20'),
+(select room_no from girlsh where std_id='20'),(select hostel_fee from girlsh where std_id='20'),
+(select day_no from purchase where serial_no='20'),
+(select sum from purchase where serial_no='20'),(select per_day_profit from profit where day='20'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(21,(select id from student_s2 where id='21'),
+(select std_name from student_s2 where id='21'),(select branch from student_s2 where id='21'),
+(select room_no from boys_h1 where std_id='21'),(select hostel_fee from boys_h1 where std_id='21'),
+(select day_no from purchase where serial_no='21'),
+(select sum from purchase where serial_no='21'),(select per_day_profit from profit where day='21'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(22,(select id from student_s2 where id='22'),
+(select std_name from student_s2 where id='22'),(select branch from student_s2 where id='22'),
+(select room_no from boys_h1 where std_id='22'),(select hostel_fee from boys_h1 where std_id='22'),
+(select day_no from purchase where serial_no='22'),
+(select sum from purchase where serial_no='22'),(select per_day_profit from profit where day='22'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(23,(select id from student_s2 where id='23'),
+(select std_name from student_s2 where id='23'),(select branch from student_s2 where id='23'),
+(select room_no from boys_h1 where std_id='23'),(select hostel_fee from boys_h1 where std_id='23'),
+(select day_no from purchase where serial_no='23'),
+(select sum from purchase where serial_no='23'),(select per_day_profit from profit where day='23'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(24,(select id from student_s2 where id='24'),
+(select std_name from student_s2 where id='24'),(select branch from student_s2 where id='24'),
+(select room_no from girlsh where std_id='24'),(select hostel_fee from girlsh where std_id='24'),
+(select day_no from purchase where serial_no='24'),
+(select sum from purchase where serial_no='24'),(select per_day_profit from profit where day='24'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(25,(select id from student_s2 where id='25'),
+(select std_name from student_s2 where id='25'),(select branch from student_s2 where id='25'),
+(select room_no from boys_h1 where std_id='25'),(select hostel_fee from boys_h1 where std_id='25'),
+(select day_no from purchase where serial_no='25'),
+(select sum from purchase where serial_no='25'),(select per_day_profit from profit where day='25'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(26,(select id from student_s2 where id='26'),
+(select std_name from student_s2 where id='26'),(select branch from student_s2 where id='26'),
+(select room_no from girlsh where std_id='26'),(select hostel_fee from girlsh where std_id='26'),
+(select day_no from purchase where serial_no='26'),
+(select sum from purchase where serial_no='26'),(select per_day_profit from profit where day='26'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(27,(select id from student_s2 where id='27'),
+(select std_name from student_s2 where id='27'),(select branch from student_s2 where id='27'),
+(select room_no from girlsh where std_id='27'),(select hostel_fee from girlsh where std_id='27'),
+(select day_no from purchase where serial_no='27'),
+(select sum from purchase where serial_no='27'),(select per_day_profit from profit where day='27'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(28,(select id from student_s2 where id='28'),
+(select std_name from student_s2 where id='28'),(select branch from student_s2 where id='28'),
+(select room_no from girlsh where std_id='28'),(select hostel_fee from girlsh where std_id='28'),
+(select day_no from purchase where serial_no='28'),
+(select sum from purchase where serial_no='28'),(select per_day_profit from profit where day='28'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(29,(select id from student_s2 where id='29'),
+(select std_name from student_s2 where id='29'),(select branch from student_s2 where id='29'),
+(select room_no from boys_h1 where std_id='29'),(select hostel_fee from boys_h1 where std_id='29'),
+(select day_no from purchase where serial_no='29'),
+(select sum from purchase where serial_no='29'),(select per_day_profit from profit where day='29'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee,day_no,purchase,
+per_day_profit)values(30,(select id from student_s2 where id='30'),
+(select std_name from student_s2 where id='30'),(select branch from student_s2 where id='30'),
+(select room_no from boys_h1 where std_id='30'),(select hostel_fee from boys_h1 where std_id='30'),
+(select day_no from purchase where serial_no='30'),
+(select sum from purchase where serial_no='30'),(select per_day_profit from profit where day='30'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(31,
+(select id from student_s2 where id='31'),
+(select std_name from student_s2 where id='31'),(select branch from student_s2 where id='31'),
+(select room_no from girlsh where std_id='31'),(select hostel_fee from girlsh where std_id='31'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(32,
+(select id from student_s2 where id='32'),
+(select std_name from student_s2 where id='32'),(select branch from student_s2 where id='32'),
+(select room_no from girlsh where std_id='32'),(select hostel_fee from girlsh where std_id='32'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(33,
+(select id from student_s2 where id='33'),
+(select std_name from student_s2 where id='33'),(select branch from student_s2 where id='33'),
+(select room_no from girlsh where std_id='33'),(select hostel_fee from girlsh where std_id='33'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(34,
+(select id from student_s2 where id='34'),
+(select std_name from student_s2 where id='34'),(select branch from student_s2 where id='34'),
+(select room_no from boys_h1 where std_id='34'),(select hostel_fee from boys_h1 where std_id='34'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(35,
+(select id from student_s2 where id='35'),
+(select std_name from student_s2 where id='35'),(select branch from student_s2 where id='35'),
+(select room_no from boys_h1 where std_id='35'),(select hostel_fee from boys_h1 where std_id='35'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(36,
+(select id from student_s2 where id='36'),
+(select std_name from student_s2 where id='36'),(select branch from student_s2 where id='36'),
+(select room_no from boys_h1 where std_id='36'),(select hostel_fee from boys_h1 where std_id='36'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(37,
+(select id from student_s2 where id='37'),
+(select std_name from student_s2 where id='37'),(select branch from student_s2 where id='37'),
+(select room_no from boys_h1 where std_id='37'),(select hostel_fee from boys_h1 where std_id='37'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(38,
+(select id from student_s2 where id='38'),
+(select std_name from student_s2 where id='38'),(select branch from student_s2 where id='38'),
+(select room_no from girlsh where std_id='38'),(select hostel_fee from girlsh where std_id='38'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(39,
+(select id from student_s2 where id='39'),
+(select std_name from student_s2 where id='39'),(select branch from student_s2 where id='39'),
+(select room_no from boys_h1 where std_id='39'),(select hostel_fee from boys_h1 where std_id='39'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(40,
+(select id from student_s2 where id='40'),
+(select std_name from student_s2 where id='40'),(select branch from student_s2 where id='40'),
+(select room_no from boys_h1 where std_id='40'),(select hostel_fee from boys_h1 where std_id='40'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(41,
+(select id from student_s2 where id='41'),
+(select std_name from student_s2 where id='41'),(select branch from student_s2 where id='41'),
+(select room_no from boys_h1 where std_id='41'),(select hostel_fee from boys_h1 where std_id='41'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(42,
+(select id from student_s2 where id='42'),
+(select std_name from student_s2 where id='42'),(select branch from student_s2 where id='42'),
+(select room_no from boys_h1 where std_id='42'),(select hostel_fee from boys_h1 where std_id='42'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(43,
+(select id from student_s2 where id='43'),
+(select std_name from student_s2 where id='43'),(select branch from student_s2 where id='43'),
+(select room_no from boys_h1 where std_id='43'),(select hostel_fee from boys_h1 where std_id='43'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(44,
+(select id from student_s2 where id='44'),
+(select std_name from student_s2 where id='44'),(select branch from student_s2 where id='44'),
+(select room_no from boys_h1 where std_id='44'),(select hostel_fee from boys_h1 where std_id='44'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(45,
+(select id from student_s2 where id='45'),
+(select std_name from student_s2 where id='45'),(select branch from student_s2 where id='45'),
+(select room_no from boys_h1 where std_id='45'),(select hostel_fee from boys_h1 where std_id='45'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(46,
+(select id from student_s2 where id='46'),
+(select std_name from student_s2 where id='46'),(select branch from student_s2 where id='46'),
+(select room_no from boys_h1 where std_id='46'),(select hostel_fee from boys_h1 where std_id='46'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(47,
+(select id from student_s2 where id='47'),
+(select std_name from student_s2 where id='47'),(select branch from student_s2 where id='47'),
+(select room_no from boys_h1 where std_id='47'),(select hostel_fee from boys_h1 where std_id='47'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(48,
+(select id from student_s2 where id='48'),
+(select std_name from student_s2 where id='48'),(select branch from student_s2 where id='48'),
+(select room_no from girlsh where std_id='48'),(select hostel_fee from girlsh where std_id='48'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(49,
+(select id from student_s2 where id='49'),
+(select std_name from student_s2 where id='49'),(select branch from student_s2 where id='49'),
+(select room_no from boys_h1 where std_id='49'),(select hostel_fee from boys_h1 where std_id='49'));
+
+insert into mainp_(serial_no,std_id,name,branch,room_no,hostel_fee)values(50,
+(select id from student_s2 where id='50'),
+(select std_name from student_s2 where id='50'),(select branch from student_s2 where id='50'),
+(select room_no from girlsh where std_id='50'),(select hostel_fee from girlsh where std_id='50'));
+
+select * from mainp_;
+
